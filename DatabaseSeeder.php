@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         /* aqui llamamos a todos los seeders para que al momento de ejecutar el 
          * comando php artisan db:seed se ejecuten todos los seeders
          */
+        $this->call(class: AccionesSeeder::class);
         $this->call(GruposSistemaSeeder::class);
         $this->call(UserSeeder::class);
     }
