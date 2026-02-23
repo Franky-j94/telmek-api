@@ -22,7 +22,7 @@ class SolicitudesService
         ->insert([
             'user_id' => $rows['user_id'],
             'accion_id' => 1,
-            'fecha_accion' => now(),
+            'fecha' => now(),
             'movimiento'=> 'Solicitud creada con el ID: ' . $solicitudes->id. 'y se asigno al asesor',
         ]);
         return $solicitudes; 
@@ -34,7 +34,7 @@ class SolicitudesService
         ->insert([
             'user_id' => $rows['user_id'],
             'accion_id' => 2,
-            'fecha_accion' => now(),
+            'fecha_' => now(),
             'movimiento'=> 'Solicitud actualizada con el ID: ' . $id. 'y se asigno al asesor',
         ]);
         return $confCarga;  
@@ -45,7 +45,7 @@ class SolicitudesService
         ->insert([
             'user_id' => $solicitud->user_id,
             'accion_id' => 3,
-            'fecha_accion' => now(),
+            'fecha' => now(),
             'movimiento'=> 'Solicitud eliminada con el ID: ' . $id,
         ]);
         return Solicitud::destroy($id);
