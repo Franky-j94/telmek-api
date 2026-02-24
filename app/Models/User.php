@@ -42,4 +42,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(GruposSistema::class);
     }
+    public function controlCarga()
+    {
+        return $this->hasMany(ControlCarga::class);
+    }
 }

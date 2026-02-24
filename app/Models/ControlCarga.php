@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ControlCarga extends Model
 {
     use HasFactory;
+    protected $table = 'control_carga';
     protected $fillable = [
-        'descripcion_grupo',
-        'activo',
+        'anio',
+        'total',
+        'user_id',
     ];
 }
