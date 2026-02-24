@@ -8,6 +8,7 @@ use App\Services\SolicitudesService;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\SolicitudesRequest;
 use App\Models\User;
+use Carbon\Carbon;
 
 class SolicitudesController extends Controller
 {
@@ -34,6 +35,8 @@ class SolicitudesController extends Controller
         ]);
     }
     public function add(SolicitudesRequest $request): JsonResponse {
+        // se agrega el usuario que tengas menos solicitudes
+        
         $data = $this->service->create($request->validated());
         return response()->json($data, 201);
     }
@@ -45,5 +48,9 @@ class SolicitudesController extends Controller
 
     public function deleted($id): JsonResponse {
         return response()->json($this->service->delete($id), 204);
+    }
+
+    public function cancelar($id): JsonResponse {
+        return response()->json($this->service->cancel($id), 200);
     }
 }

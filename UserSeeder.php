@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\ControlCarga;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -39,5 +40,12 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123456'),
             'grupo_id' => 2,
         ]);
+
+        ControlCarga::create([
+            'anio' => 2026,
+            'total' => 0,
+            'user_id' => 2,
+        ]);
+        
     }
 }
