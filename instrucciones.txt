@@ -1,0 +1,12 @@
+// ********* Para instalar los paquetes de vendor ********* 
+
+composer install
+
+// *********** creae base de datos *******//////
+
+CREATE DATABASE practic CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+// *********** Para crear la base de datos  y los seeders ***********
+
+php artisan migrate --seed
+
